@@ -10,7 +10,7 @@ Please be aware that even if great care was taken to provide the correct amounts
 
   If you are only interested in reading this book, you will find a copy in the *pdf* directory of the master branch of the repository ready for download.
 
-  Should you wish to make any changes to the document (fixing typos, improving the formatting, switching to a different font... etc.) you can do following:
+  Should you wish to make any changes to the document (fix typos, improve the formatting, switch to a different font... etc.) you can do following:
 
   1. git clone the project (or download/unpack the zip file)
   2. make your changes in the master branch
