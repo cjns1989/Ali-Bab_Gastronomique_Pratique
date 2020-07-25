@@ -1,0 +1,230 @@
+\documentclass[french, titlepage, 10pt]{book}
+\usepackage{etoolbox}
+\newbool{K}
+\setbool{K}{false}
+\newbool{N}
+\setbool{N}{true}
+
+\overfullrule=1mm
+
+\usepackage[LGRgreek]{mathastext}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{adforn}
+\usepackage{wasysym}
+% \newcommand{\sk}{\begin{center}           % paragraph separator
+%                   \color{black!75}
+% %                 {\large\gfont ✤}
+% %                 {\normalsize\gfont ❖}
+% %                 {\small\gfont\ding{66}}
+% %                 {\large\gfont\adfast{6}}
+% %                 {\small\gfont\adforn{62}}
+% %                 {\small\gfont\adfclosedflourishleft}
+% %                 {\small\gfont\adfdoubleflourishleft}
+%                   \footnotesize\Circle
+%                   \normalsize\Circle
+%                   \footnotesize\Circle
+%                   \end{center}}
+
+\newcommand{\sks}{\begin{center}           % paragraph separator
+                  \color{black!75}
+%                 {\large\gfont ✤}
+%                 {\normalsize\gfont ❖}
+%                 {\tiny\ding{66}}
+%                 {\small\gfont\adfast{6}}
+%                 {\small\gfont\adforn{62}}
+%                 {\tiny\gfont\adfclosedflourishleft}
+%                 {\tiny\gfont\adfdoubleflourishleft}
+                  \tiny\Circle
+                  \scriptsize\Circle
+                  \tiny\Circle
+                  \end{center}}
+
+% user-defined command to switch oldstyle numbers to proportional outside tables
+
+\newcommand{\ppp}{\addfontfeature{Numbers=Proportional}} % switch to proportional
+\newcommand{\mmm}{\addfontfeature{Numbers=Monospaced}}   % switch to monospace
+
+\newcommand{\sr}{\textsuperscript}        % text mode superscript
+
+\usepackage{fontspec}
+% \newfontfamily\gfont{DejaVu Sans}
+\newfontfamily\gfont{Ornements ADF}
+
+\setmainfont[Numbers={OldStyle,Proportional}]{EBGaramond-Regular}      % cjns1989 - 20191129 - old style numbers 
+% \setmainfont{Georgia}
+% \setmainfont{EB Garamond}
+% \setmainfont{Palatino Linotype}
+% \setmainfont{Linux Libertine O}
+% \setmainfont{Noticia Text}
+% \setmainfont{Cardo}
+% \setmainfont{Verdana}
+% \setmainfont{Roboto Condensed}
+% \setmainfont{DejaVu Serif Condensed}
+% \setmainfont{Fontin Regular}
+% \setmainfont{Arial Unicode MS}
+% \setmainfont{Times New Roman}
+% \setmainfont{Latin Modern Roman}
+% \setmainfont[Scale=0.9,Numbers={OldStyle}]{Minion Pro       }
+% \setmainfont [Numbers={OldStyle}]{Vollkorn}
+%
+% \setmainfont{Accanthis ADF Std}
+% \setmainfont{Baskervald ADF Std}
+% \setmainfont{Berenis ADF Pro Math}
+% \setmainfont{Gillius ADF Cd}
+% \setmainfont{Gillius ADF No2}
+% \setmainfont{Ikarius ADF Std}
+% \setmainfont{Irianis ADF Style Std}
+% \setmainfont{Libris ADF Std}
+% \setmainfont{Mekanus ADF Std}
+% \setmainfont{Romande ADF Std}
+% \setmainfont{Tribun ADF Std}
+% \setmainfont{Tribun ADF Std,Tribun ADF Std Cond}
+% \setmainfont{Universalis ADF Std}
+% \setmainfont{GFS Didot}
+%
+% \setmainfont
+%     [ Path        = /usr/local/share/fonts/opentype/Garamond/ ,
+%       Extension   = .otf,
+%       UprightFont = *12-Regular ,
+%       ItalicFont  = *12-Italic ,
+%       BoldFont    = *08-Regular ]
+%     {EBGaramond}
+
+\newfontfamily\ff{Symbola}
+
+\usepackage[xindy]{indextools}
+
+\usepackage[columns=3,
+           indentunit=4pt,
+           font=footnotesize,
+           columnsep=5pt]{idxlayout}
+
+\indexsetup{othercode=\small}
+
+\usepackage{makeidx}
+\makeindex[title={Table Alphabétique},intoc=true, options=-r -s booka4-index.ist] 
+
+\newcommand{\lettergroup}[1]{%
+{\centering\large\textbf{#1}\newline\par}%
+}
+\usepackage{setspace}
+\setstretch{0.9}
+\usepackage[figuresright]{rotating}
+
+% \usepackage[papersize={3.715 in, 5.944 in}, top=1.2cm, bottom=2.4cm, right=0.4cm, left=0.4cm]{geometry}
+\usepackage[papersize={4.80 in, 6.40 in},left=.5 in,right=.5 in]{geometry}
+
+
+\usepackage[french]{babel}
+
+\usepackage[pdfauthor={Ali-Bab},
+            pdftitle={Gastronomie Pratique - Études Culinaires},
+            pdfcreator={Richer Saint-Faure - RSF Press}
+            pdflang={fr}
+            pdfsubject={Cusine française},
+            pdfkeywords={cjns1989, RSF},
+            pdfproducer={XeLateX with hyperref},
+            hypertexnames=true
+            plainpages=false,
+            pdfpagelabels,
+            pagebackref,
+            bookmarks]{hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{pdfpages}
+\usepackage{ragged2e}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}[display] {\small\itshape\filcenter}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[display] {\small\itshape\filcenter}{\theparagraph}{1em}{}
+
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{array}
+
+\usepackage{makecell}
+
+\usepackage[stable, bottom]{footmisc}
+\usepackage{perpage}
+\MakePerPage{footnote} 
+
+\usepackage{hyphenat}
+\usepackage{microtype}
+
+\usepackage{epigraph}
+\usepackage[defaultlines=4,all]{nowidow}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}% clears all header and footer fields
+% \fancyfoot[C]{--~\thepage~--}
+\fancyhead[C]{--~\thepage~--}
+\renewcommand*{\headrulewidth}{0pt}
+\renewcommand*{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}% clears all header and footer fields
+% \fancyfoot[C]{--~\thepage~--}%
+  \fancyhead[C]{--~\thepage~--}%
+  \renewcommand*{\headrulewidth}{0pt}%
+  \renewcommand*{\footrulewidth}{0pt}%
+}
+
+\makeatletter
+\renewcommand{\@pnumwidth}{3em} 
+\renewcommand{\@tocrmarg}{4em}
+\makeatother
+
+\usepackage{graphicx}
+
+\newcommand{\sk}{
+\begin{center} 
+  \includegraphics[scale=.5]{/other/media/Livres/Ali-Bab/images/sep00.png}
+\end{center}}
+
+\author{Ali-Bab}
+\title{Gastronomie Pratique}
+\begin{document}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{2}
+
+%
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz 
+\hfuzz
+\raggedbottom
+
+\frontmatter
+
+\includepdf{/other/media/Livres/Ali-Bab/images/cover_4x3.pdf}
+
+\input{/other/media/Livres/Ali-Bab/tex/chapters.tex}
+
+\renewcommand{\contentsname}{Table des Matières}
+\pdfbookmark{\contentsname}{toc}
+\tableofcontents
+\phantomsection
+\cleardoublepage
+
+% \addcontentsline{toc}{chapter}{Table des Matières}
+% \addcontentsline{toc}{chapter}{Table Alphabétique}
+
+\hypertarget{p9001}{}
+\printindex
+
+\end{document}
