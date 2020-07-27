@@ -31,7 +31,7 @@ all:	pdf10
 pdf10:
 	xelatex -output-directory=$(COMP_DIR) $(LATEX_DIR)/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).tex
 	xelatex -output-directory=$(COMP_DIR) $(LATEX_DIR)/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).tex
-	makeindex comp/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).idx
+	texindy -L french -C utf8 comp/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).idx
 	xelatex -output-directory=$(COMP_DIR) $(LATEX_DIR)/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).tex
 	- mv $(COMP_DIR)/$(AUTHOR_UNDERSCORE)-$(TITLE_UNDERSCORE)-$(PT10).pdf $(PDF_DIR)/
  
